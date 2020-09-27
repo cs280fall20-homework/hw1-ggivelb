@@ -1,13 +1,19 @@
-const canvas = document.getElementById("myCanvas");
-const ctx = canvas.getContext("2d");
+import Tank from "./model/Tank.js";
 
-const img = new Image(50, 50);
-img.src = "./assets/tank.png";
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d"); 
+
+const t = new Tank(canvas.width / 2 - 25, canvas.height - 60, 50, 50, 10);
+
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(img, canvas.width / 2 - 25, canvas.height - 60, 50, 50);
-  window.requestAnimationFrame(draw);
+  t.draw(ctx);
+  t.missiles.filter(x => x.isActive).forEach(x => {
+    x.draw(ctx)
+    x.move(canvas.height)
+  })
+  t.move(canvas.width)
 }
 
-draw();
+setInterval(draw, 10)

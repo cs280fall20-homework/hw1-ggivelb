@@ -5,7 +5,7 @@ const gameOver = new CustomEvent("gameover")
 class Invader extends Sprite {
     constructor(x, y, dy, wobble_size) {
         const img = new Image(50, 50)
-        img.src = "./assets/Invader.png"
+        img.src = "./assets/invader.png"
         super(x, y, 50, 50, img)
         this.dy = dy
         this.wobble = wobble_size

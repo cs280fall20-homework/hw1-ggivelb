@@ -13,3 +13,4 @@ with the following behavior:
 # Play the Game
 
 To play, simply follow [this](https://cs280fall20-homework.github.io/hw1-ggivelb/) link and hit the left or right arrow key.
+
